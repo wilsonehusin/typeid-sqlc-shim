@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+      - run: |
+          go run . -config testdata/sample.yaml
+      - uses: chainguard-dev/actions/nodiff@main
+        with:
+          fixup: "go run . -config testdata/sample.yaml"
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+      - uses: golangci/golangci-lint-action@v5
+        with:
+          install-mode: goinstall
+          version: latest
