@@ -51,7 +51,8 @@ func run() error {
 	if err != nil {
 		return fmt.Errorf("marshalling sqlc.yaml: %w", err)
 	}
-	infoLog("Append the following to your sqlc.yaml:\n\n%s", string(b))
+	infoLog("Append the following to your sqlc.yaml:\n\n%s\n", string(b))
+	infoLog("See https://docs.sqlc.dev/en/latest/howto/overrides.html#the-go-type-map for more information.\n")
 
 	return nil
 }
