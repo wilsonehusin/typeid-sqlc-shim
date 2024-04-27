@@ -1,6 +1,6 @@
 # typeid-sqlc-shim
 
-This is a generator for [sqlc](https://sqlc.dev)-generated Go code which uses [TypeID](https://github.com/jetify-com/typeid-go)).
+This is a generator for [sqlc](https://sqlc.dev)-generated Go code which uses [TypeID](https://github.com/jetify-com/typeid-go).
 
 ## Why?
 
