@@ -2,6 +2,10 @@
 
 This is a generator for [sqlc](https://sqlc.dev)-generated Go code which uses [TypeID](https://github.com/jetify-com/typeid-go).
 
+> [!WARNING]
+> This is a prototype and not meant for production use, expect rough edges.
+> See [open issues](https://github.com/wilsonehusin/typeid-sqlc-shim/issues) for known limitations.
+
 ## Why?
 
 To leverage compile-time enforcement, TypeID requires strict typing for every prefix's ID. On the other hand, sqlc supports overriding one data type (e.g. UUID) to another in one-to-one mapping. This is not enough for TypeID.
