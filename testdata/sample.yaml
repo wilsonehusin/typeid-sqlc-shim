@@ -9,7 +9,6 @@ models:
     prefix: org
     table: organizations
   - name: Team
-    prefix: team
     table: teams
   - name: Project
     prefix: proj

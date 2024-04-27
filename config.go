@@ -50,6 +50,13 @@ func (m Model) SQLColumn() string {
 	return fmt.Sprintf("%s.id", m.Table)
 }
 
+func (m Model) PrefixStr() string {
+	if m.Prefix != "" {
+		return m.Prefix
+	}
+	return strings.ToLower(m.Name)
+}
+
 func (m Model) TypePrefix() string {
 	return fmt.Sprintf("%sPrefix", m.Name)
 }
@@ -65,9 +72,8 @@ func (m Model) Valid() bool {
 		hasError = true
 	}
 	if m.Prefix == "" {
-		if n := strings.ToLower(m.Name); n != "" {
-			warnLog("model.prefix is empty, defaulting to \"%s\"\n", n)
-			m.Prefix = n
+		if p := m.PrefixStr(); p != "" {
+			warnLog("model.prefix is empty, defaulting to \"%s\"\n", p)
 		}
 	}
 	return !hasError
