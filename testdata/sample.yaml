@@ -1,0 +1,16 @@
+package:
+  name: testdata #=> "package testdata"
+  path: testdata/sample.go # Assuming invocation from root of repository
+models:
+  - name: User
+    prefix: usr
+    table: users
+  - name: Organization
+    prefix: org
+    table: organizations
+  - name: Team
+    prefix: team
+    table: teams
+  - name: Project
+    prefix: proj
+    table: projects
